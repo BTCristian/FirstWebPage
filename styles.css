@@ -7,28 +7,35 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr 4fr;
     gap: 20px;
+    animation: fadeIn 1.5s ease-out;
 }
 
 header {
     background-color: #2a8b8b;
     text-align: center;
-    color: #fff
-
+    color: #fff;
+    animation: fadeIn 1s ease-out;
+    
 }
 
 main {
-    padding: 20px
+    padding: 20px;
+    animation: fadeIn 1s ease-out;
+    animation: slideFromRight 1.5s ease-out forwards
 }
 
 footer {
     background-color: #2a8b8b;
     text-align: center;
     color: #fff;
-    ;
+    animation: fadeIn 1s ease-out;
+    animation: slideFromLeft 1.7s ease-out forwards;
+   
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+   
 }
 
 a {
@@ -40,16 +47,27 @@ ul, ol {
     color: #0b7272
 }
 
-.styled-image {
+.left-image {
     width: 300px;
     height: auto;
     border-radius: 50%;
     border: 1px solid rgb(243, 33, 5);
     margin-left: 1fr;
+    animation: slideFromLeft 1.5s ease-out forwards;
 }
 
+.right-image {
+    animation: slideFromRight 1.5s ease-out forwards;
+}
+
+
 h2 {
-    padding: 10px 20px 15px 25px
+    padding: 10px 20px 15px 25px;
+    animation: slideFromRight 1.5s ease-out forwards
+}
+
+h1 {
+    animation: slideFromLeft 1.5s ease-out forwards
 }
 
 @media screen and (max-width: 768px) {
@@ -59,8 +77,40 @@ h2 {
     header { 
         font-size: 1.5em;
     }
-    .styled-image {
+    .left-image,
+    .right-image {
+        width:100%;
         margin-bottom: 10px;
     }
 }
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+    }to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }to{
+        transform: translateX(0);
+    }
+    
+}
+
+
+
+
 
